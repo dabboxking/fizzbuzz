@@ -1,4 +1,4 @@
-// @flow
+//      
 'use strict';
 
 const fizz = 'fizz';
@@ -10,7 +10,6 @@ function doFizzBuzz(req, res) {
     max = req.query.max_value || req.body.max_value,
     arr = [];
 
-  console.log('word: ' + word + ' max: ' + max);
   if (isValidMaxValue(max) && isValidFizzBuzzWord(word)) {
     arr = getFizzBuzzNumbers(word, max);
     res.status(200).json({
@@ -22,17 +21,17 @@ function doFizzBuzz(req, res) {
       'status': 'error'
     });
   }
-};
+}
 
-function isValidMaxValue(max) {
+function isValidMaxValue(max        ) {
   return max > 0 && max <= Number.MAX_SAFE_INTEGER;
-};
+}
 
-function isValidFizzBuzzWord(word) {
+function isValidFizzBuzzWord(word        ) {
   return word === fizz || word === buzz || word === fizzbuzz;
-};
+}
 
-function getFizzBuzzNumbers(word, max) {
+function getFizzBuzzNumbers(word        , max        ) {
   switch (word) {
     case fizzbuzz:
       return getArrayOfNumbersDivBy5And3(max);
@@ -41,9 +40,9 @@ function getFizzBuzzNumbers(word, max) {
     case buzz:
       return getArrayOfNumbersDivBy5(max);
     default:
-      console.log("How did this happen?");
+      console.log('How did this happen?');
   }
-};
+}
 
 function getArrayOfNumbersDivBy5And3(max) {
   var arr = [];
@@ -77,11 +76,11 @@ function getArrayOfNumbersDivBy3(max) {
 
 function divisibleBy3(num) {
   return num % 3 === 0;
-};
+}
 
 function divisibleBy5(num) {
   return num % 5 === 0;
-};
+}
 
 module.exports = {
   doFizzBuzz: doFizzBuzz,

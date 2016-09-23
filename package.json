@@ -4,18 +4,29 @@
   "description": "Simple REST API.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js --env=dev",
+    "dev": "node server.js --env=dev",
+    "predev": "npm run transform",
+    "prod": "node server.js --env=production",
+    "art": "artillery run ./art.yml",
+    "prelint": "npm run transform",
+    "lint": "eslint ./src",
+    "transform": "flow-remove-types src/ --out-dir build/",
+    "posttransform": "cd build/src/ && ls",
     "test": "./node_modules/.bin/jasmine-node spec",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test:watch": "jasmine-node spec --autotest --watch ."
   },
   "author": "Emmanuel J. Reyme",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
-    "jasmine-node": "^1.14.5",
-    "request": "^2.75.0"
+    "flow-remove-types": "^1.0.4",
+    "helmet": "^2.2.0",
+    "jasmine-node": "^1.14.5"
   },
   "devDependencies": {
+    "babel-eslint": "^6.0.0",
+    "eslint": "^3.0.0",
     "flow-bin": "^0.32.0",
     "supertest": "^2.0.0"
   }

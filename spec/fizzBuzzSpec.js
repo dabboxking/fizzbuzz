@@ -1,7 +1,7 @@
 // @flow
 'use strict';
 
-var fizzBuzz = require('../app/fizzBuzz');
+var fizzBuzz = require('../build/fizzBuzz');
 var request = require('supertest');
 
 const fizz = 'fizz';
@@ -17,7 +17,7 @@ const base_url = "http://localhost:3000";
 describe('Fizz Buzz Test Suite:', () => {
 
   describe('Test for GET /api:', () => {
-    it('returns status code 200', (done) => {
+    it('should return status code 200 and [3,6,9,12,15]', (done) => {
       var body = {
         word: 'fizz',
         max_value: 15
@@ -30,12 +30,13 @@ describe('Fizz Buzz Test Suite:', () => {
           if (err) {
             throw err;
           }
+          //console.log(res);
           expect(res.status).toBe(200);
-          expect(res.numbers).toEqual(expectedArray);
+          expect(res.body.numbers).toEqual(expectedArray);
           done();
         });
     });
-    it('returns status code 400', (done) => {
+    it('should return status code 400', (done) => {
       var body = {
         word: 'invalidWord',
         max_value: 15

@@ -1,0 +1,6 @@
+[include]
+.*/src/.*
+
+[ignore]
+.*/spec/.*
+.*/build/.*
