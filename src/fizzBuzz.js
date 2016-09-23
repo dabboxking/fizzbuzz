@@ -5,7 +5,7 @@ const fizz = 'fizz';
 const buzz = 'buzz';
 const fizzbuzz = 'fizzbuzz';
 
-function doFizzBuzz(req, res) {
+function doFizzBuzz(req:Object, res:Object) {
   var word = req.query.word || req.body.word,
     max = req.query.max_value || req.body.max_value,
     arr = [];
