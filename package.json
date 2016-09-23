@@ -8,10 +8,11 @@
     "predev": "npm run transform",
     "prod": "node server.js --env=production",
     "art": "artillery run ./art.yml",
+    "postart": "mv artillery_report* reports/",
     "prelint": "npm run transform",
     "lint": "eslint ./src",
     "transform": "flow-remove-types src/ --out-dir build/",
-    "posttransform": "cd build/src/ && ls",
+    "posttransform": "rm -rf ./build/src",
     "test": "./node_modules/.bin/jasmine-node spec",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "test:watch": "jasmine-node spec --autotest --watch ."

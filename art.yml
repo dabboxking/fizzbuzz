@@ -1,9 +1,15 @@
 config:
   target: 'http://localhost:3000'
   phases:
-    - duration: 60
-      arrivalRate: 20
+    - duration: 5 #time (sec)
+      arrivalRate: 20 #users
 scenarios:
   - flow:
     - get:
         url: "/api?word=fizz&max_value=30"
+  - flow:
+    - get:
+        url: "/api?word=buzz&max_value=30"
+  - flow:
+    - get:
+        url: "/api?word=fizzbuzz&max_value=30"

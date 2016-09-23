@@ -8,10 +8,11 @@ fizzbuzz/
   | build/
     | src/
       | fizzBuzz.js - pure javascript code base
-    | spec/
-      | fizzBuzzSpec.js - test for code base
-    | src
-      | fizzBuzz.js - code base with flow js annotations
+  | reports/ - artillery reports are moved here 
+  | spec/
+    | fizzBuzzSpec.js - test for code base
+  | src/
+    | fizzBuzz.js - code base with flow js annotations
   | .babelrc - cool stuff
   | .exlintrc - style guide
   | .flowconfig - configuration for static code analysis
@@ -48,9 +49,9 @@ Flow.js
 
 RUNNING THE APP
 ===============
-$ npm install -g babel-cli
-$ npm run transform
-$ npm run dev OR npm run prod
+$ npm run dev
+OR
+$ npm run prod
 
 HOW TO CONSUME
 via console
@@ -76,7 +77,7 @@ Static code analysis (optional)
 ===============================
 # add "// @flow" to top of file you want to check
 # use the command below to check your file
-$ npm run-script flow
+$ npm run flow
 
 Running Flow code
 =================
@@ -90,12 +91,10 @@ Using Artillery
 https://artillery.io/docs/index.html
 
 $ npm install -g artillery
+$ npm run dev
 $ npm run art
 runs: artillery run ./art.yml
 running this script will create a json file in root dir containing performance stats
-
-Sync function Test
-node --trace-sync-io server.js
 
 SECURITY
 ========
