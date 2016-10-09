@@ -25,8 +25,8 @@ Node
 
 ### Getting Started
 ```bash
-$ git clone https://github.com/dabboxking/exercises/fizzBuzzApi.git
-$ cd fizzBuzzApi
+$ git clone https://github.com/dabboxking/exercises/fizzbuzz.git
+$ cd fizzbuzz
 ```
 
 ### Installing
