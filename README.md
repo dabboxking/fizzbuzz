@@ -71,7 +71,7 @@ $ babel --watch=./src --out-dir=./build
 ```
 
 ### Performance Testing
-<p><a href="https://artillery.io/docs/index.html">Using Artillery</p>
+<p><a href="https://artillery.io/docs/index.html">Using Artillery</a></p>
 
 ```bash
 $ npm install -g artillery
