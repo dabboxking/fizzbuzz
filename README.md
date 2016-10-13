@@ -2,23 +2,23 @@
 <p>Small web application that presents a simple REST API.</p>
 
 ### Application structure
-A. fizzbuzz/
-  1. build/
-  2. src/
-    1. fizzBuzz.js - pure javascript code base
-  3. reports/ - artillery reports are moved here
-  4. spec/
-    1. fizzBuzzSpec.js - test for code base
-  5. src/
-    1. fizzBuzz.js - code base with flow js annotations
-  6. .babelrc - cool stuff
-  7. .exlintrc - style guide
-  8. .flowconfig - configuration for static code analysis
-  9. .gitignore - source control file
-  10. art.yml - performance analysis config
-  11. package.json - node config
-  12. README.txt - please read me!
-  13. server.js - node entry point, contains server setup
+```
+fizzbuzz/           --> root
+  build/            --> source files without flow annotations
+  src/              --> source files with flow annotations
+    fizzBuzz.js     --> pure javascript code base
+  reports/          --> artillery reports are saved here
+  spec/             --> test location
+    fizzBuzzSpec.js --> test for code base
+  .babelrc          --> cool stuff
+  .exlintrc         --> style guide
+  .flowconfig       --> configuration for static code analysis
+  .gitignore        --> source control file
+  art.yml           --> performance analysis config
+  package.json      --> node config
+  README.txt        --> please read me!
+  server.js         --> node entry point, contains server setup
+```
 
 ### Prerequisities
 Node
